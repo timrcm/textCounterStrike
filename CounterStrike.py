@@ -1,24 +1,6 @@
 # Counter-Strike: Boring Edition
-# Map ->
-# Join server - T, CT, or spectator?
-    # Begin T - charge forth and spray AK, plant bomb, or follow the team?
-        # Spray AK - random 50/50 chance for killing entire team, or dying heroically
-        # Plant bomb - start a countdown and die for the cause
-        # Follow the team - get awp'd in the head
-    # Begin CT - charge forth and spray M4, defend bombsite, or follow the team?
-        # Spray M4 - 10/90 chance of killing entire team, or dying because the M4 sucks
-        # Defend bombsite - start countdown and die to the explosion
-        # Follow the team - a crazy T with an AK47 sprays wildly at you, killing you instantly
-    # Begin spectator - yawn
-
-# Note 5.24.18 10:42pm - incorporate a couple of 'for' loops and lists
-# Maybe make something run out of ammo?
-# item = Random.randrange(0,3,1)
-# outOfAmmo = equipmentCounterTerrorist[item]
-# ^ This works pretty well if I remove non-ammo items from the equipment lists?
-# Scrap that, let’s do this:
-# https://stackoverflow.com/questions/306400/how-to-randomly-select-an-item-from-a-list
-# Maybe create a list of reasons why the M4 fails or something to cast random.choice(list) at.
+# 05/25/2018
+# No sobriety was involved in the creation of this script
 
 import random
 import time
