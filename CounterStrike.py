@@ -13,7 +13,7 @@ killedReason = [
     'A flashbang went off in your face, and a knife was subsequently stabbed in to your back.',
     'You tripped on several grenades.',
     'Someone slowly pecked away at your health with an uzi while you were reloading.',
-    'You have recieved a .50 cal shell from a desert eagle between the eyes.'
+    'You have recieved a .50 cal shell from a desert eagle between the eyes.',
     'A noob crouched in a corner with a pump shotgun ended your spree.'
 ]
 allMaps = ['de_dust', 'de_dust2', 'de_inferno', 'de_aztec', 'de_rats', 'de_abottabad', 'de_nuke', 'de_iceworld']
