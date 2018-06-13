@@ -16,6 +16,7 @@ killedReason = [
 killed = "None"
 
 def death(killed):
+        config.losses += 1
         random.shuffle(killedReason)
         killed = killedReason.pop()
         print(killed, "\nYou are very dead and lose the round.\n")
@@ -38,6 +39,7 @@ def bombDetonates():
     time.sleep(1)
 
 def victory(team, reason):
+    config.wins += 1
     print(reason, team, "win.")
     next_round()
 

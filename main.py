@@ -66,7 +66,8 @@ def start_next_round():
                 config.team = 'Terrorist'
                 print("\nYou have been auto-balanced to the T team.\n")
 
-    print("{} rounds left.".format(config.rounds_left))
+    print(f"{config.wins} rounds won, {config.losses} rounds lost.")
+    print("{} rounds left until you get bored and don't want to continue.".format(config.rounds_left))
 
     while config.rounds_left != 0:
         if config.team == 'Terrorist':

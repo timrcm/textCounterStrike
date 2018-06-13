@@ -16,5 +16,9 @@ ammo = 30
 # Set the number of rounds to play
 rounds_left = 5
 
+# Pre-set the number of wins and losses 
+wins = 0
+losses = 0
+
 # These are here for my convenience and shouldn't be altered. 
 team = None
