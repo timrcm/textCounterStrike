@@ -12,3 +12,9 @@ bomb_guaranteed = 0
 
 # Set your primary weapon (AK/M4) ammo amount
 ammo = 30
+
+# Set the number of rounds to play
+rounds_left = 5
+
+# These are here for my convenience and shouldn't be altered. 
+team = None

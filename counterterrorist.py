@@ -5,7 +5,7 @@ import outcomes
 
 equipmentCounterTerrorist = ['M416', 'Desert Eagle', 'Explosive Grenade', 'Defuse Kit']
 
-def start():
+def welcome():
     print("""
     You are on the Counter-Terrorist team.
     Before proceeding, know that you are equipped with:
@@ -14,8 +14,10 @@ def start():
     for e in equipmentCounterTerrorist:
         print(e, end="\n")
 
+def round():
+
     print("""
-    What shall be your course of action?
+    Round starting. What shall be your course of action?
     1. Charge forwards alone with your M416, spraying wildly
     2. Defend the bombsites
     3. Follow your team

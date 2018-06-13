@@ -1,6 +1,8 @@
 import random
 import time
 
+import config
+
 killedReason = [
     'You have been shot in the head with an AWP.',
     'Some crazy bastard ran around the corner with an AK47 and instantaneously mowed you down.',
@@ -11,9 +13,11 @@ killedReason = [
     'A noob crouched in a corner with a pump shotgun ended your spree.'
 ]
 
-killed = random.choice(killedReason)
+killed = "None"
 
 def death(killed):
+        random.shuffle(killedReason)
+        killed = killedReason.pop()
         print(killed, "\nYou are very dead and lose the round.\n")
         next_round()
 
