@@ -5,6 +5,7 @@
 import random
 import time
 
+import config
 import terrorist
 import counterterrorist
 
@@ -49,8 +50,18 @@ def start():
         startSpectator()
 
 def start_next_round():
-    global team 
+    global team
     global rounds_left
+    
+    if config.stuck_team != 1:
+        swap = random.randint(1, 10)
+        if swap > 8:
+            if team == 'Terrorist':
+                team = 'Counter-Terrorist'
+                print("\n\nYou have been auto-balanced to the CT team.\n\n")
+            else:
+                team = 'Terrorist'
+                print("\n\nYou have been auto-balanced to the T team.\n\n")
 
     print("{} rounds left.".format(rounds_left))
 
