@@ -2,6 +2,7 @@ import random
 import time
 
 import outcomes 
+import weapons
 
 equipmentTerrorist = ['AK47', 'Desert Eagle', 'Explosive Grenade']
 
@@ -12,7 +13,7 @@ def welcome():
     """)
 
     for e in equipmentTerrorist:
-        print(e, end="\n")
+        print(e, end=", ")
 
 def round():
 
@@ -25,10 +26,14 @@ def round():
 
     proceed = input("> ")
 
+    AK = weapons.AK47()
+    spray_headshots = AK.spray()
+
     if proceed == "1":
-        ak47Accuracy = random.randrange(1, 10, 1)
-        if ak47Accuracy > 1:
-            outcomes.victory("Terrorists", f"Mohammad guided your bullets directly in to {ak47Accuracy} CT heads.")
+        if spray_headshots == 0:
+            outcomes.death(outcomes.killed)
+        elif spray_headshots > 1:
+            outcomes.victory("Terrorists", f"Mohammad guided your bullets directly in to {spray_headshots} CT heads.")
         else:
             print(f"You sprayed wildly and popped a CT in the dome, but ultimately needed to reload and died.")
             time.sleep(2)

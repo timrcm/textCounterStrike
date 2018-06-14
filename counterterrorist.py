@@ -2,6 +2,7 @@ import random
 import time
 
 import outcomes
+import weapons
 
 equipmentCounterTerrorist = ['M416', 'Desert Eagle', 'Explosive Grenade', 'Defuse Kit']
 
@@ -12,7 +13,7 @@ def welcome():
     """)
 
     for e in equipmentCounterTerrorist:
-        print(e, end="\n")
+        print(e, end=", ")
 
 def round():
 
@@ -25,26 +26,32 @@ def round():
 
     proceed = input("> ")
 
-    if "charge" in proceed or "M416" in proceed or "M4" in proceed or "spray" in proceed or "1" in proceed:
-        m4Accuracy = random.randrange(1, 10, 1)
-        if m4Accuracy >= 8:
-            print(f"Your M4 somehow managed to not suck and mowed down {m4Accuracy} people.")
-            print("Counter-Terrorists wi...")
-            time.sleep(1)
-            print("wait, what's this?!")
-            time.sleep(1)
-            outcomes.bombDetonates()
-            outcomes.victory("Terrorists", "The bomb has detonated.")
+    M4 = weapons.M416()
+    spray_headshots = M4.spray()
+
+    if proceed == "1":
+
+        if spray_headshots >= 4:
+            print(f"Your M4 somehow managed to not suck and mowed down {spray_headshots} people.")
+            outcomes.victory("Counter-Terrorists", "All terrorists are dead.")
         else:
-            print(f"You sprayed the M4 wildly, causing multiple {m4Accuracy} damage 'headshots' and killing no one.")
+            print(f"You sprayed the M4 wildly, killing {spray_headshots} terrorists.")
             outcomes.death(outcomes.killed)
 
-    elif "defend" in proceed or "bombsites" in proceed or "bomb" in proceed or "2" in proceed:
-        outcomes.bombDetonates()
-        print("You failed to prevent the bomb from being planted.")
-        outcomes.death(outcomes.killed)
+    elif proceed == "2":
 
-    elif "follow" in proceed or "team" in proceed or "3" in proceed:
+        if spray_headshots >= 3:
+            print(f"You killed {spray_headshots} terrorists at the bombsite.")
+            outcomes.victory("Counter-Terrorists", "The bomb has been defused.")
+        elif spray_headshots == 1 or spray_headshots == 2:    
+            print(f"You popped {spray_headshots} in the dome, but ultimately failed to prevent the bomb from being planted.")
+            outcomes.bombDetonates()
+            outcomes.death(outcomes.killed)
+        elif spray_headshots == 0:
+            print("You have failed to get any kills.")
+            outcomes.death(outcomes.killed)
+
+    elif proceed == "3":
         outcomes.death(outcomes.killed)
 
     else:

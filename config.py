@@ -10,8 +10,13 @@ stuck_team = 0
 # Guarantees that the bomb goes off when planted
 bomb_guaranteed = 0
 
-# Set your primary weapon (AK/M4) ammo amount
-ammo = 30
+# Set your weapon ammo amount
+ak_ammo = 30
+m4_ammo = 30
+
+# Set your weapon accuracy percentage, a floating point value between 0 and 1
+ak_accuracy = 0.8
+m4_accuracy = 0.6
 
 # Set the number of rounds to play
 rounds_left = 5
