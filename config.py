@@ -2,7 +2,7 @@
 # Most of these should be treated as boolean values (0, or 1).
 
 # Enable or disable logging of game output 
-logging = 1
+logging = 0
 
 # Ensure that your team is never changed
 stuck_team = 0
@@ -15,8 +15,8 @@ ak_ammo = 30
 m4_ammo = 30
 
 # Set your weapon accuracy percentage, a floating point value between 0 and 1
-ak_accuracy = 0.8
-m4_accuracy = 0.6
+ak_accuracy = 0.80
+m4_accuracy = 0.60
 
 # Set the number of rounds to play
 rounds_left = 5
