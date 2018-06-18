@@ -13,10 +13,12 @@ bomb_guaranteed = 0
 # Set your weapon ammo amount
 ak_ammo = 30
 m4_ammo = 30
+m249_ammo = 100
 
 # Set your weapon accuracy percentage, a floating point value between 0 and 1
 ak_accuracy = 0.80
 m4_accuracy = 0.60
+m249_accuracy = 0.15
 
 # Set the number of rounds to play
 rounds_left = 5

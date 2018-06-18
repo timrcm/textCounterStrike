@@ -21,13 +21,15 @@ def round():
     Round starting. What shall be your course of action?
     1. Charge forwards alone with an AK47, spraying wildly
     2. Plant the bomb, ignoring your team
-    3. Follow the team \n
+    3. Follow the team
+    4. Use your team as a human shield and crouch behind them, sniping heads with your AK47 \n
     """)
 
     proceed = input("> ")
 
     AK = weapons.AK47()
     spray_headshots = AK.spray()
+    snipe_headshots = AK.snipe()
 
     if proceed == "1":
         if spray_headshots == 0:
@@ -46,6 +48,12 @@ def round():
 
     elif proceed == "3":
         outcomes.death(outcomes.killed)
+
+    elif proceed == "4":
+        if snipe_headshots > 4:
+            outcomes.victory("Terrorists", f"Mohammad guided your bullets directly in to {snipe_headshots} CT heads.")
+        else:
+            outcomes.death(outcomes.killed)
 
     else:
         outcomes.confused()

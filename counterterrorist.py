@@ -22,12 +22,14 @@ def round():
     1. Charge forwards alone with your M416, spraying wildly
     2. Defend the bombsites
     3. Follow your team
+    4. Use your team as a human shield and crouch behind them, sniping with your M416
     """)
 
     proceed = input("> ")
 
     M4 = weapons.M416()
     spray_headshots = M4.spray()
+    snipe_headshots = M4.snipe()
 
     if proceed == "1":
 
@@ -53,6 +55,12 @@ def round():
 
     elif proceed == "3":
         outcomes.death(outcomes.killed)
+
+    elif proceed == "4":
+        if snipe_headshots > 6:
+            outcomes.victory("Counter-Terrorists", f"Your M4 managed to not suck and popped {snipe_headshots} terrorists in the dome.")
+        else:
+            outcomes.death(outcomes.killed)
 
     else:
         outcomes.confused()

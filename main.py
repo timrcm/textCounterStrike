@@ -14,7 +14,7 @@ allMaps = ['de_dust', 'de_dust2', 'de_inferno', 'de_aztec',
             'de_rats', 'de_abottabad', 'de_nuke', 'de_iceworld']
 map = random.choice(allMaps)
 
-def start():   
+def start():
 
     config.rounds_left -= 1
 
@@ -60,7 +60,7 @@ def start_next_round():
             # Swap the team & change the config so that it can only occur once
             config.stuck_team = 1
             if config.team == 'Terrorist':
-                team = 'Counter-Terrorist'
+                config.team = 'Counter-Terrorist'
                 print("\nYou have been auto-balanced to the CT team.\n")
             else:
                 config.team = 'Terrorist'

@@ -1,5 +1,5 @@
 import config
-import random
+from random import randint
 
 class Weapons(object):
     def __init__(self):
@@ -12,9 +12,15 @@ class Weapons(object):
     def spray(self):
         self.sprayaccuracy = self.accuracy * 0.25
         self.maxheadshots = int(self.sprayaccuracy * self.ammo)
-        self.headshots = random.randint(0, self.maxheadshots)
-
+        self.headshots = randint(0, self.maxheadshots)
         return self.headshots
+
+    def snipe(self):
+        self.snipeaccuracy = self.accuracy * 0.50
+        self.maxheadshots = int(self.snipeaccuracy * self.ammo)
+        self.headshots = randint(0, self.maxheadshots)
+        return self.headshots
+        
 
 class AK47(Weapons):
     def __init__(self):
@@ -25,3 +31,8 @@ class M416(Weapons):
     def __init__(self):
         self.accuracy = config.m4_accuracy
         self.ammo = config.m4_ammo
+
+class M249(Weapons):
+    def __init__(self):
+        self.accuracy = config.m249_accuracy
+        self.ammo = config.m249_ammo
