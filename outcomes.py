@@ -23,7 +23,9 @@ def death(killed):
         next_round()
 
 def confused():
-    death("You wander around indecisive and confused until sniped in the head.")
+    config.losses += 1
+    print("You wander around indecisive and confused until sniped in the head.")
+    next_round()
 
 def bombDetonates():
     print("The bomb has been planted.")
@@ -46,3 +48,7 @@ def victory(team, reason):
 def next_round():
     from main import start_next_round
     start_next_round()
+
+def banned():
+    print("You have been banned from the server.")
+    exit(0)

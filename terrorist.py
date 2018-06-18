@@ -1,35 +1,31 @@
 import random
 import time
 
+import config
 import outcomes 
 import weapons
 
-equipmentTerrorist = ['AK47', 'Desert Eagle', 'Explosive Grenade']
-
 def welcome():
-    print("""
-    You are on the Terrorist team.
-    Before proceeding, know that you are equipped with:
-    """)
+    print("You are on the Terrorist team.")
 
-    for e in equipmentTerrorist:
-        print(e, end=", ")
 
 def round():
 
-    print("""
+    weapons.choose_gun()
+    if config.weapon.weapon_name == "AWP":
+        outcomes.banned()
+    spray_headshots = config.weapon.spray()
+    snipe_headshots = config.weapon.snipe()
+
+    print(f"""
     Round starting. What shall be your course of action?
-    1. Charge forwards alone with an AK47, spraying wildly
+    1. Charge forwards alone with your {config.weapon.name()}, spraying wildly
     2. Plant the bomb, ignoring your team
     3. Follow the team
-    4. Use your team as a human shield and crouch behind them, sniping heads with your AK47 \n
+    4. Use your team as a human shield and crouch behind them, sniping heads with your {config.weapon.name()} \n
     """)
 
     proceed = input("> ")
-
-    AK = weapons.AK47()
-    spray_headshots = AK.spray()
-    snipe_headshots = AK.snipe()
 
     if proceed == "1":
         if spray_headshots == 0:

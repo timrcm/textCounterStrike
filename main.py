@@ -12,14 +12,14 @@ import outcomes
 
 allMaps = ['de_dust', 'de_dust2', 'de_inferno', 'de_aztec', 
             'de_rats', 'de_abottabad', 'de_nuke', 'de_iceworld']
-map = random.choice(allMaps)
+config.csmap = random.choice(allMaps)
 
 def start():
 
     config.rounds_left -= 1
 
     print(f"""
-    You have joined a Counter-Strike server on the {map} map.
+    You have joined a Counter-Strike server on the {config.csmap} map.
     Select a team:
     1. Terrorist
     2. Counter-Terrorist
@@ -65,14 +65,16 @@ def start_next_round():
                 print("\nYou have been auto-balanced to the T team.\n")
 
     print(f"{config.wins} rounds won, {config.losses} rounds lost.")
-    print("{} rounds left until you get bored and don't want to continue.".format(config.rounds_left))
+    print(f"{config.rounds_left} rounds left until you get bored and don't want to continue.\n")
 
     while config.rounds_left != 0:
         if config.team == 'Terrorist':
             config.rounds_left -= 1
+            terrorist.welcome()
             terrorist.round()
         elif config.team == 'Counter-Terrorist':
             config.rounds_left -= 1
+            counterterrorist.welcome()
             counterterrorist.round()
         else: 
             print("Team checking error.")
