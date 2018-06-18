@@ -51,8 +51,6 @@ def start():
     
 def start_next_round():
     
-    global team
-    
     # Give a 20% chance of being team-swapped 
     if config.stuck_team != 1:
         swap = random.randint(1, 10)
