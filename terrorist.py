@@ -1,5 +1,4 @@
-import random
-import time
+from time import sleep
 
 import config
 import outcomes 
@@ -34,7 +33,7 @@ def round():
             outcomes.victory("Terrorists", f"Mohammad guided your bullets directly in to {spray_headshots} CT heads.")
         else:
             print(f"You sprayed wildly and popped a CT in the dome, but ultimately needed to reload and died.")
-            time.sleep(2)
+            sleep(2)
             outcomes.bombDetonates()
             outcomes.victory("Terrorists", "The bomb has detonated, ensuring that you died for the cause.")
 

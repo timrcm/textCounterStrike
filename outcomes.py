@@ -1,5 +1,5 @@
-import random
-import time
+from random import shuffle
+from time import sleep
 
 import config
 
@@ -17,7 +17,7 @@ killed = "None"
 
 def death(killed):
         config.losses += 1
-        random.shuffle(killedReason)
+        shuffle(killedReason)
         killed = killedReason.pop()
         print(killed, "\nYou are very dead and lose the round.\n")
         next_round()
@@ -32,13 +32,13 @@ def bombDetonates():
     x = 3
     while x != 0:
         print(f"{x}...")
-        time.sleep(1)
+        sleep(1)
         x -= 1
     print("*" * 100)
     print("=" * 100)
     print("!" * 100)
     print("\nA massive explosion occurs.\n")
-    time.sleep(1)
+    sleep(1)
 
 def victory(team, reason):
     config.wins += 1

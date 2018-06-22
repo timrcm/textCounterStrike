@@ -2,8 +2,8 @@
 # 05/25/2018
 # No sobriety was involved in the creation of this script
 
-import random
-import time
+from random import choice, randint
+from time import sleep
 
 import config
 import counterterrorist
@@ -12,7 +12,7 @@ import outcomes
 
 allMaps = ['de_dust', 'de_dust2', 'de_inferno', 'de_aztec', 
             'de_rats', 'de_abottabad', 'de_nuke', 'de_iceworld']
-config.csmap = random.choice(allMaps)
+config.csmap = choice(allMaps)
 
 def start():
 
@@ -53,7 +53,7 @@ def start_next_round():
     
     # Give a 20% chance of being team-swapped 
     if config.stuck_team != 1:
-        swap = random.randint(1, 10)
+        swap = randint(1, 10)
         if swap > 8:
             # Swap the team & change the config so that it can only occur once
             config.stuck_team = 1
@@ -87,7 +87,7 @@ def startSpectator():
     x = 0
     while x != 3:
         print("." * 10)
-        time.sleep(1)
+        sleep(1)
         x += 1
     print("\nYou have been kicked for being AFK and must join another server.")
     start()
