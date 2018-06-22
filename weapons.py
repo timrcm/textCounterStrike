@@ -1,4 +1,5 @@
 from random import randint
+import webbrowser
 
 import config
 import outcomes
@@ -85,5 +86,7 @@ def choose_gun():
         config.weapon = Deagle()
     elif config.weapon == "4":
         config.weapon = AWP()
+        webbrowser.open('https://www.youtube.com/watch?v=lXMskKTw3Bc')
+        outcomes.banned()
     else:
         outcomes.confused()

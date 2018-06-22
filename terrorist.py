@@ -1,4 +1,5 @@
 from time import sleep
+import webbrowser
 
 import config
 import outcomes 
@@ -11,8 +12,6 @@ def welcome():
 def round():
 
     weapons.choose_gun()
-    if config.weapon.weapon_name == "AWP":
-        outcomes.banned()
     spray_headshots = config.weapon.spray()
     snipe_headshots = config.weapon.snipe()
 
