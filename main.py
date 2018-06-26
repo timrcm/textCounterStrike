@@ -48,7 +48,7 @@ def start():
         print("I have no idea what team you're asking to join. You get to be a spectator.")
         startSpectator()
 
-    
+
 def start_next_round():
     
     # Give a 20% chance of being team-swapped 
